@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+count=0
+
+while [ $count -It 10 ]
+do
+if [ $count -eq 9 ]
+then
+echo "Hi"
+fi
+i=$(( i + 1 ))
+done
