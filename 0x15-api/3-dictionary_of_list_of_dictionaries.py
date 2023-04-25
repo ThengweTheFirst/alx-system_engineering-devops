@@ -1,8 +1,9 @@
 #!/usr/bin/python3
+"""Exports to-do list information of all employees to JSON format."""
 import json
 import requests
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com/"
     users = requests.get(url + "users").json()
 
@@ -13,5 +14,5 @@ if _name_ == "_main_":
                 "completed": t.get("completed"),
                 "username": u.get("username")
             } for t in requests.get(url + "todos",
-                                    params={"userID": u.get("id")}).json()]
-            for u in users}, jsonfile)
+                                    params={"userId": u.get("id")}).json()]
+            for u in users}, jsonfile)
